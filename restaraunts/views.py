@@ -1,40 +1,20 @@
 from django.shortcuts import render
-
-from django.shortcuts import render
-
-def detail(request):
+from .models import Restaraunt
+def list(request):
 	context = { 
-	"my_food_blog":[
-{
-	"item": "Mozerella Pizza",
-	"item_discription": "This mozerella pizza is delicious. Try this mozeralla pizza tonight!",
-	"created": "2017-08-12",
-	"updated": "2017-08-12",
-	},
-
-	{
-	"item": "Lasgña",
-	"item_discription": "This mozerella pizza is delicious. Try this mozeralla pizza tonight!",
-	"created": "2017-08-12",
-	"updated": "2017-08-12",
-	},
-
-{
-	"item": "Turkey Sandiwch",
-	"item_discription": "This mozerella pizza is delicious. Try this mozeralla pizza tonight!",
-	"created": "2017-08-12",
-	"updated": "2017-08-12",
-	},
-{
-	"item": "French Fries w/Cheese",
-	"item_discription": "This mozerella pizza is delicious. Try this mozeralla pizza tonight!",
-	"created": "2017-08-12",
-	"updated": "2017-08-12",
-	},
-
-	],
+	"my_food_blog": Restaraunt.objects.all(),
 
 	}
 
-	return render(request,'Menu.html', context)
+	return render(request,'list.html', context)
+
+def restaraunt_detail(request,restaraunt_id):
+	context = {
+	"restaraunt": Restaraunt.objects.get(id=restaraunt_id),
+	
+
+	}
+
+
+	return render(request, 'detail.html', context)
 # Create your views here.

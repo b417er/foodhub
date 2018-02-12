@@ -19,5 +19,6 @@ from restaraunts import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('menu/', views.detail )
+    path('list/', views.list, name="list"),
+    path('detail/<int:restaraunt_id>/', views.restaraunt_detail, name="restaraunt_detail"),
 ]

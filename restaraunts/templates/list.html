@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>list</title>
+</head>
+<body>
+	{% for item in my_food_blog %}
+	<a href =" {% url 'restaraunt_detail' restaraunt_id=item.id %} " > 
+	<ul>
+	<li>{{item.name}}</li>
+	<li>{{item.description}}</li>
+	<li>{{item.opening}}</li>
+	<li>{{item.closing}}</li>
+	</ul>
+	{% endfor %}
+</body>
+</html>
