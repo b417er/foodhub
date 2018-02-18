@@ -1,13 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Restaraunt</title>
-</head>
+{% extends "base.html" %}
+
+{% block title %}
+
+Hello I'm the block Title
+
+{% endblock title %}
+
+{% block code %}
+
 <h1>{{restaraunt.name}}</h1>
 <h1>{{restaraunt.description}}</h1>
 <h1>{{restaraunt.opening}}</h1>
 <h1>{{restaraunt.closing}}</h1>
-<body>
 <a href ="{% url 'list' %}" > Back </a> 
-</body>
-</html>
+
+{% endblock code %}

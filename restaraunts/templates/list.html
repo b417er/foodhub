@@ -1,17 +1,49 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>list</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}
+
+Hello I'm the block Title
+
+{% endblock title %}
+
+
+{% block code %}
+
+
+
+<div class="jumbotron bg-dark	">
+  <h1 class="text-primary">Add Your Favourite Restaraunt!</h1> 
+
+  <p class="text-white">Healthy? Unhealthy? Foodie? All you need at FoodHub.</p>
+  <hr class="my-4">
+  <p class="lead">
+    <a href= "{% url 'restaraunt_create' %} "  class="btn btn-primary" role="button">Add a Restaraunt</a>
+  </p>
+</div>
+
+<div class="row">
 	{% for item in my_food_blog %}
-	<a href =" {% url 'restaraunt_detail' restaraunt_id=item.id %} " > 
-	<ul>
-	<li>{{item.name}}</li>
-	<li>{{item.description}}</li>
-	<li>{{item.opening}}</li>
-	<li>{{item.closing}}</li>
-	</ul>
+
+
+
+		<div class="col-md-4">
+			<div class="card">
+			  <div class="card-body">
+			    <h2 class="card-title">{{item.name}}</h2>
+
+			    <p class="card-text">{{item.description}}</p>
+
+			    <a href =" {% url 'restaraunt_update' restaraunt_id=item.id %} " class="btn btn-outline-primary">Update</a>
+			    <a href = " {% url 'restaraunt_delete' restaraunt_id=item.id %} " class="btn btn-outline-danger">Delete</a>
+			    
+			  </div>
+			</div>
+		</div>
+
+
 	{% endfor %}
-</body>
-</html>
+
+</div>
+
+
+{% endblock code %}

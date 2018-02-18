@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+
+Hello I'm the block Title
+
+{% endblock title %}
+
+{% block code %}
+
+<body>
+	<form action = "{% url 'restaraunt_update' restaraunt_id=restaraunt_obj.id %} " method ="POST">
+		{% csrf_token %}
+		{{update_form | crispy}}
+		<input type="submit" value="Update" >
+	</form>
+	
+
+{% endblock code %}

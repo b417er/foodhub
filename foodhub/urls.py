@@ -21,4 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('list/', views.list, name="list"),
     path('detail/<int:restaraunt_id>/', views.restaraunt_detail, name="restaraunt_detail"),
+    path('create/', views.create, name="restaraunt_create"),
+    path('update/<int:restaraunt_id>/', views.update, name="restaraunt_update"),
+    path('delete/<int:restaraunt_id>/', views.restaraunt_delete, name='restaraunt_delete'),
+
 ]
