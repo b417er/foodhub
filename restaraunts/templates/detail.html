@@ -14,4 +14,14 @@ Hello I'm the block Title
 <h1>{{restaraunt.closing}}</h1>
 <a href ="{% url 'list' %}" > Back </a> 
 
+<ul>
+	{% for item in items %}
+	<li> {{item.name}}</li>
+	<li> {{item.description}}</li>
+	<li> {{item.price}}</li>
+
+	{% endfor %}
+
+</ul>
+
 {% endblock code %}

@@ -12,7 +12,7 @@ Hello I'm the block Title
 {% block code %}
 
 <body>
-	<form action = "{% url 'restaraunt_update' restaraunt_id=restaraunt_obj.id %} " method ="POST">
+	<form action = "{% url 'restaraunt_update' restaraunt_id=restaraunt_obj.id %} " method ="POST" enctype="multipart/form-data">
 		{% csrf_token %}
 		{{update_form | crispy}}
 		<input type="submit" value="Update" >
